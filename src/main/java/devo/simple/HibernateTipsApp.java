@@ -17,8 +17,7 @@ public class HibernateTipsApp {
         Student student = new Student("Ivan", "Ivanov", "ivanov@gmail.com");
         studentDao.saveStudent(student);
         List< Student > students = studentDao.getStudents();
-        //students.forEach(s - > System.out.println(s.getFirstName()));
-
+        students.forEach(System.out::println);
     }
 
 }
