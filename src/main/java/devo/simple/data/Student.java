@@ -1,4 +1,4 @@
-package devo.data;
+package devo.simple.data;
 
 import javax.persistence.*;
 

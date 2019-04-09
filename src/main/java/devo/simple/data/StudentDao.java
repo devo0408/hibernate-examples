@@ -1,6 +1,6 @@
-package devo.data;
+package devo.simple.data;
 
-import devo.util.HibernateUtil;
+import devo.simple.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -25,6 +25,5 @@ public class StudentDao {
             return session.createQuery("from Student", Student.class).list();
         }
     }
-
 
 }

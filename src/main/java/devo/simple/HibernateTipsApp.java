@@ -1,7 +1,7 @@
-package devo;
+package devo.simple;
 
-import devo.data.Student;
-import devo.data.StudentDao;
+import devo.simple.data.Student;
+import devo.simple.data.StudentDao;
 
 import java.util.List;
 
