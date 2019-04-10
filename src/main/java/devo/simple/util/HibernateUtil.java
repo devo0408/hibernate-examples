@@ -30,6 +30,9 @@ public class HibernateUtil {
                 configuration.addAnnotatedClass(devo.associative.onetomany.Cart.class);
                 configuration.addAnnotatedClass(devo.associative.onetomany.Item.class);
 
+                configuration.addAnnotatedClass(devo.associative.manytomany.Employee.class);
+                configuration.addAnnotatedClass(devo.associative.manytomany.Project.class);
+
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
             } catch (Exception e) {
                 e.printStackTrace();
