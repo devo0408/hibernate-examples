@@ -18,7 +18,11 @@ public class HibernateUtil {
                 ServiceRegistry serviceRegistry
                         = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
+
                 configuration.addAnnotatedClass(devo.simple.data.Student.class);
+                configuration.addAnnotatedClass(devo.associative.manytoone.Company.class);
+                configuration.addAnnotatedClass(devo.associative.manytoone.Developer.class);
+
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
             } catch (Exception e) {
                 e.printStackTrace();
