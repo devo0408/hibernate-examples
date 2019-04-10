@@ -10,7 +10,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(name = "company_name")
     private String companyName;
 
     public Company() {

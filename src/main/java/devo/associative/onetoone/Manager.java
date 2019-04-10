@@ -1,10 +1,10 @@
-package devo.associative.manytoone;
+package devo.associative.onetoone;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MTO_DEVELOPERS")
-public class Developer {
+@Table(name = "OTO_MANAGER")
+public class Manager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,17 +13,16 @@ public class Developer {
     @Column(name = "first_name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name ="fk_сompany_id", nullable = false)
-    private Company company;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "contact_id")
+    private Contact contact;
 
-
-    public Developer() {
+    public Manager() {
     }
 
-    public Developer(String name, Company company) {
+    public Manager(String name, Contact contact) {
         this.name = name;
-        this.company = company;
+        this.contact = contact;
     }
 
     public int getId() {
@@ -42,12 +41,12 @@ public class Developer {
         this.name = name;
     }
 
-    public Company getCompany() {
-        return company;
+    public Contact getContact() {
+        return contact;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     @Override
@@ -55,7 +54,7 @@ public class Developer {
         return "Developer:\n" +
                 "id: " + id +
                 "\nFirst Name: " + name + "\n" +
-                "Company: " + company;
+                "Contact Information:\n" + contact;
     }
 
 
